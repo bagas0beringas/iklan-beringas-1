@@ -1,16 +1,92 @@
-! Combined Adblock Aggressive Filter
-! Sumber:
-! Safe version + Extra block lists
-! Fanboy Annoyance
-! Fanboy Social
-! Malware Filter
+! =========================================
+! SUPER KILLER AD FILTER
+! Gabungan filter internasional + lokal + custom
+! Mode: Agresif (berisiko blokir fitur situs/app)
+! =========================================
 
-!#include https://easylist.to/easylist/easylist.txt
-!#include https://easylist.to/easylist/easyprivacy.txt
-!#include https://filters.adtidy.org/extension/chromium/filters/11.txt
-!#include https://filters.adtidy.org/extension/chromium/filters/4.txt
-!#include https://filters.adtidy.org/extension/chromium/filters/224.txt
-!#include https://filters.adtidy.org/extension/chromium/filters/3.txt
-!#include https://secure.fanboy.co.nz/fanboy-annoyance.txt
-!#include https://secure.fanboy.co.nz/fanboy-social.txt
-!#include https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-online.txt
+! ==== BLOKIR GOOGLE ADS ====
+||googleads.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||securepubads.g.doubleclick.net^
+||partner.googleadservices.com^
+
+! ==== BLOKIR FACEBOOK/META ADS ====
+||connect.facebook.net^
+||static.xx.fbcdn.net/rsrc.php^
+||graph.facebook.com^
+||ads.facebook.com^
+||ads-api.tiktokglobalshop.com^
+
+! ==== BLOKIR YOUTUBE IN-VIDEO ADS ====
+||youtube.com/get_midroll_
+||youtube.com/api/stats/ads^
+||youtube.com/pagead/^
+||youtube.com/ptracking^
+||yt3.ggpht.com/*=s88-c-k-c0x00ffffff-no-rj-mo^$image
+
+! ==== BLOKIR POPUP & REDIRECT ====
+||adserver.*
+||popads.net^
+||propellerads.com^
+||onclickads.net^
+||newpoptab.com^
+||newtab.club^
+||trafficjunky.net^
+
+! ==== BLOKIR TRACKER UMUM ====
+||doubleclick.net^
+||scorecardresearch.com^
+||quantserve.com^
+||zedo.com^
+||adnxs.com^
+||tapjoyads.com^
+||applovin.com^
+||inmobi.com^
+||chartboost.com^
+
+! ==== BLOKIR IKLAN GAME MOBILE ====
+||unityads.unity3d.com^
+||ads.mopub.com^
+||ads.flurry.com^
+||sdk-config.vungle.com^
+||api.vungle.com^
+||ironbeesdk.com^
+||supersonicads.com^
+||supersonic.com^
+
+! ==== BLOKIR IKLAN STREAMING ====
+||vidoomy.com^
+||outbrain.com^
+||taboola.com^
+||brightcove.com^
+||thevideo.me^
+||streamtape.com^$popup
+||vidcloud9.com^$popup
+||gounlimited.to^$popup
+
+! ==== BLOKIR MALWARE & PHISHING ====
+||malwarebytes.com^
+||phishingfilter.org^
+||urlhaus.abuse.ch^
+||malwaredomainlist.com^
+
+! ==== BLOKIR IKLAN SOSIAL MEDIA ====
+||instagram.com/graphql/query/?q=ig_ad_*$xmlhttprequest
+||tiktokv.com/aweme/v1/ads/*
+||tiktokcdn.com/ads/*
+||twitter.com/i/api/1.1/ads/*
+
+! ==== ANTI-WIDGET & ANNOYANCE ====
+##.sponsored
+##.ad-container
+##.advertisement
+##.sponsor
+##[class*="ads"]
+##[id*="ads"]
+##[class*="sponsor"]
+##[class*="promotion"]
+
+! ==== ANTI-PUSH NOTIFICATION SPONSOR ====
+||onesignal.com^$third-party
+||pushwoosh.com^
+||pusher.com^
