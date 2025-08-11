@@ -1,339 +1,91 @@
 
-
-! -------------------------
-! 1) BLOKIR DOMAIN IKLAN & TRACKER (umum / adnetworks / adservers)
-! -------------------------
+! — BLOCK DOMAIN IKLAN / TRACKER POPULER —
 ||doubleclick.net^
-||static.doubleclick.net^
-||pagead2.googlesyndication.com^
 ||googlesyndication.com^
 ||googleadservices.com^
-||adservice.google.com^
-||adservice.google.co.id^
-||googletagmanager.com^
-||googletagservices.com^
-||google-analytics.com^
-||analytics.google.com^
 ||googletagmanager.com^
 ||googletagservices.com^
 ||adnxs.com^
-||ads.adnxs.com^
-||adnxs.eu^
-||appnexus.com^
 ||adsafeprotected.com^
 ||moatads.com^
-||moat.com^
 ||pubmatic.com^
 ||openx.net^
 ||rubiconproject.com^
 ||serving-sys.com^
 ||smartadserver.com^
-||spotxchange.com^
-||spotx.tv^
-||springserve.com^
-||springserve.com^
 ||taboola.com^
 ||outbrain.com^
-||revcontent.com^
 ||criteo.com^
-||criteo.net^
-||tradedoubler.com^
 ||adroll.com^
-||adx.adscale.de^
 ||yieldmo.com^
 ||scorecardresearch.com^
-||quantserve.com^
 ||zedo.com^
-||zedoads.com^
-||media.net^
-||brightcove.com^
-||bttrack.com^
-||ads-twitter.com^
-||ads.facebook.com^
-||facebook.net^
-||graph.facebook.com^
-||pixel.facebook.com^
-||connect.facebook.net^
-||fbcdn.net^
-||tiktokv.com^
-||pangle.io^
-||aax.amazon-adsystem.com^
-||amazon-adsystem.com^
-||ads.amazon.com^
-||ads.mopub.com^
-||mopub.com^
-||pubnative.net^
-||pubnative.io^
-||adcolony.com^
-||ironSource.mobi^
-||ironsrc.com^
-||iron-sensor.com^
+||revcontent.com^
+||spotxchange.com^
+||inmobi.com^
+||unityads.unity3d.com^
 ||tapjoy.com^
 ||vungle.com^
-||unityads.unity3d.com^
-||chartboost.com^
-||supersonicads.com^
-||inmobi.com^
-||appsflyer.com^
+||adcolony.com^
+||ironsrc.com^
 ||adjust.com^
+||appsflyer.com^
 ||branch.io^
 ||flurry.com^
-||adform.net^
-||adform.com^
-||adformx.com^
-||adtech.advertising.com^
-||advertising.com^
-||adserver.360yield.com^
-||yieldlab.net^
-||krxd.net^
-||krxd.net^
-||mediaplex.com^
-||scorecardresearch.com^
-||pubmatic.com^
-||securepubads.g.doubleclick.net^
-||secure-ds.serving-sys.com^
-||adsafeprotected.com^
-||taboola.com^
-||outbrain.com^
-||revcontent.com^
 
-! -------------------------
-! 2) BLOKIR RESOURCE / PATHS / API (script / media / xhr)
-! Gunakan $modifier untuk tipe resource bila perlu.
-! -------------------------
+! — BLOCK SCRIPT / RESOURCE IKLAN (TERBATTLE) —
 *ads.js$script
 *ads.min.js$script
 *advert.js$script
-*advertisement.js$script
-*advertising.js$script
 *banner.js$script
 *popup.js$script
-*pop_up.js$script
 *tracking.js$script
-*track.js$script
-*tracker.js$script
-*analytics.js$script
 *sponsor.js$script
-*promotions.js$script
-*promo.js$script
-*doubleclick*ad*  # pola umum
-*/pagead/*$xmlhttprequest
-*/pagead/*$image
-*pagead2.googlesyndication.com/*$image,domain=~youtube.com
-*googleads.g.doubleclick.net/*$image
-*/adsrv/*$script
-*/adserve/*$script
-*/adserver/*$script
-*/adclick/*$xmlhttprequest
-*/ad_click/*$xmlhttprequest
-*/get_midroll_info*  # endpoint iklan video (YouTube-like)
-*/get_video_info?adformat=*  # YouTube ad param patterns
 
-! -------------------------
-! 3) BLOKIR Iklan VIDEO / YT spesifik (network + elemen hiding)
-! -------------------------
-||youtube.com/api/stats/ads^
-||youtube.com/pagead^
-||youtube.com/ptracking^
-||s.youtube.com/api/stats/ads^
-||s.youtube.com/pagead^
-||youtubei.googleapis.com/youtubei/v1/player/ad_break^
-||googlevideo.com^  # banyak iklan video disajikan lewat subdomain googlevideo; hati-hati jika ingin sangat agresif
-
-youtube.com##.ytd-promoted-video-renderer
-youtube.com##.ytd-display-ad-renderer
-youtube.com##ytd-promoted-video-renderer
-youtube.com##ytd-display-ad-renderer
-youtube.com##.ytd-merch-shelf-renderer
-youtube.com##.ytp-ad-module
-youtube.com##.video-ads
-youtube.com##.ytp-ad-player-overlay
-youtube.com##.ytp-ad-image
-youtube.com##.ytp-ad-text
-youtube.com##.ytp-ad-preview
-youtube.com##ytd-display-ad-renderer
-youtube.com##ytd-companion-slot-renderer
-youtube.com##ytd-reel-shelf-renderer ##.ytd-reel-video-renderer
-
-! -------------------------
-! 4) BLOKIR POPUP, OVERLAY, BANNERS, WIDGETS (element hiding)
-! Hati-hati: selector generik dapat memecah layout.
-! -------------------------
-##.popup
-##.pop-up
+! — HIDE ELEMENT: POPUP, OVERLAY, BANNER—FOKUS YANG KHAS SAJA —
 ##.modal-ad
 ##.overlay-ad
-##.overlay--ad
-##.overlay__ad
 ##.banner-ad
-##.bannerad
 ##.advertisement
-##.advertisement--container
-##.ad-container
-##.ad-wrapper
 ##.ad-slot
-##.ad-slot--*
 ##.ad-unit
-##.ad-unit--*
-##.ad-banner
-##.adBar
-##.adBox
-##.adsbox
-##.adsense
-##.adsense-*
-##.ad-break
-##.sponsored
-##.sponsored-post
-##.sponsoredLabel
-##.sponsor
-##.sponsor-brand
-##.promo
-##.promoted
-##.promoted-content
 ##[id^="google_ads"]
-##[id^="ad_"]
 ##[class*="ad-"]
 ##[class*="ads-"]
-##[class*="advert"]
-##[class*="sponsor"]
-##[data-ad]
-##[data-ad-client]
-##[data-ad-slot]
-##.ad--native
-##.native-ad
-##.native-ads
-##.ad--inread
-##.ad-inserter
 
-! -------------------------
-! 5) SDK / MOBILE IN-APP ADTRACKERS (common mobile ad SDK hosts)
-! -------------------------
-||adnxs.com^
-||ads.mopub.com^
-||mopub.com^
-||ads.adnxs.com^
-||inmobi.com^
-||ironsrc.com^
-||supersonic.com^
-||chartboost.com^
-||unityads.unity3d.com^
-||tapjoy.com^
-||vungle.com^
-||adcolony.com^
-||googleads.g.doubleclick.net^
-||mobileads.google.com^
-||mobads.google.com^
-||sdk2.adform.net^
-||wirelessadv.com^
-||applovin.com^
-||applovinads.com^
-||samsungads.com^
-||flurry.com^
-||branch.io^
-||appsflyer.com^
-||adjust.com^
+! — BLOCK VIDEO ADS YT — TANPA MEMUTUS FUNGSI PLAYER —
+||youtube.com/api/stats/ads^
+||youtube.com/pagead^
+||youtubei.googleapis.com/youtubei/v1/player/ad_break^
+youtube.com##.ytd-promoted-video-renderer
+youtube.com##.ytd-display-ad-renderer
 
-! -------------------------
-! 6) TRACKING & ANALYTICS (umum)
-! -------------------------
-||google-analytics.com^
+! — TRACKING & ANALYTICS (LEBIH MODERAT) —
 ||analytics.google.com^
-||ssl.google-analytics.com^
-||stats.g.doubleclick.net^
 ||stats.wp.com^
 ||hotjar.com^
 ||fullstory.com^
 ||segment.com^
 ||newrelic.com^
 ||datadoghq.com^
-||mixpanel.com^
-||amplitude.com^
-||matomo.org^
-||matomo.js^
-||quantserve.com^
-||scorecardresearch.com^
-||statcounter.com^
-||comscore.com^
-||pingdom.net^
-||collect.analytic.*^
-||collect.*.analytics.*^
 
-! -------------------------
-! 7) SOCIAL / SHARING WIDGETS (blokir elemen yang inject iklan/tracking)
-! -------------------------
+! — MOBIL / SDK AD TRACKERS UMUM —
+||adnxs.com^
+||unityads.unity3d.com^
+||tapjoy.com^
+||vungle.com^
+||adcolony.com^
+||ironsrc.com^
+||inmobi.com^
+||adjust.com^
+
+! — SOCIAL / WIDGET TRACKERS—SANTAI AGAR SHARE FUNGSI —
 ||connect.facebook.net^
 ||platform.twitter.com^
-||staticxx.facebook.com^
-||platform.instagram.com^
-||ads.pinterest.com^
 ||pixel.pinterest.com^
-||snap.licdn.com^
-||static.ads-twitter.com^
-||t.co^  # hati2: ini memblokir redirect twitter (agresif)
 
-! -------------------------
-! 8) MALWARE & SUSPICIOUS (basic blacklist patterns)
-! Note: ini bukan pengganti list malware lengkap; tambahkan URLhaus / MalwareDomain bila mau.
-! -------------------------
-||malware-filter.gitlab.io^
-||urlhaus.abuse.ch^
-||urlhaus.cymru.com^
-||phishingdomains.com^
-||malwaredomains.com^
-
-! -------------------------
-! 9) GENERIC WILDCARD RULES (efektif menutup celah pola url)
-! -------------------------
-*adserver*^
-*ad-service*^
-*adsystem*^
-*adcache*^
-*adtrack*^
-*adclick*^
-*doubleclick*^
-*partnerad*^
-*affiliate-ad*^
-*promoted*^
-*promotions*^
-*sponsored*^
-*socialad*^
-*intextad*^
-
-! -------------------------
-! 10) ELEMENT HIDE + SPECIFIC SITE FIXES (beberapa contoh)
-! -------------------------
-##.ad--header
-##.advert
-##.ads
-##.adsense
-##.top-ad
-##.bottom-ad
-##.left-ad
-##.right-ad
-##.inline-ad
-##.ad-placeholder
-##.adFrame
-##iframe[id^="ad_iframe"]
-iframe[src*="ads"]
-iframe[src*="doubleclick"]
-iframe[src*="googlesyndication"]
-
-! -------------------------
-! 11) YOUTUBE / VIMEO / VIDEO PLAYER ADDITIONAL HINTS
-! (cosmetic + network blocks already di atas; ini menambah selector spesifik)
-! -------------------------
-youtube.com##.ad-container
-youtube.com##.ytp-ad-module
-youtube.com##.ytp-ad-player-overlay
-youtube.com##.video-ads
-youtube.com##.ytd-display-ad-renderer
-vimeo.com##.ad
-vimeo.com##.js-player-ad
-
-! -------------------------
-! 12) SAFE EXCEPTIONS (kosong) — tambahkan manual jika perlu:
-! Contoh pengecualian (jika sebuah situs penting rusak, tambahkan):
-! @@||example.com^$document
-! -------------------------
-
-! EOF — end of Ultimate Offline Adblock Filter 2025
+! — EXCEPTIONS: GUNAKAN JIKA SEBUAH SITUS RUSAK ATAU TIDAK BERFUNGSI —
+!@@||youtube.com^$important
+!@@||google.com^
+!@@||gstatic.com^
+!@@||github.com^
