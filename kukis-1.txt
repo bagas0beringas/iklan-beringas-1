@@ -1,0 +1,46 @@
+! Title: Ultimate Global Cookie Blocker
+! Description: Gabungan filter global & regional untuk memblokir semua pop-up / banner cookie
+! Last updated: 2025-08-11
+! Version: 1.0
+! Expires: 4 days
+! License: CC BY-SA 4.0
+
+! ==== Sumber utama ====
+https://easylist-downloads.adblockplus.org/easylist-cookies.txt
+https://filters.adtidy.org/extension/chromium/filters/18.txt
+https://filters.adtidy.org/extension/chromium/filters/19.txt
+https://filters.adtidy.org/extension/chromium/filters/20.txt
+https://filters.adtidy.org/extension/chromium/filters/21.txt
+https://filters.adtidy.org/extension/chromium/filters/22.txt
+
+! ==== Filter tambahan berbasis regex ====
+/cookie(consent|notice|popup|policy|preferences)?[0-9_-]*/$~stylesheet
+/cookie.*(accept|agree|deny|reject|settings)/$popup
+/(privacy|gdpr).*(banner|notice|popup)/$~stylesheet
+/^https?:\/\/[^\/]+\/(cookie|privacy)[^\/]*\.js$/$script
+/^https?:\/\/consent\.[^\/]+/$all
+/cookie(law|msg|alert|warn)/$~image
+
+! ==== Blokir elemen inline ====
+##.cookie-consent
+##.cookieConsent
+##.cookie-banner
+##.cookieBanner
+##.cookie_notice
+##.cookies-notice
+##.cc-banner
+##.cc-window
+##.cc-message
+##.consent-popup
+##.gdpr-banner
+##.gdpr-consent
+##.gdpr-popup
+##.eu-cookie
+##.eucookie
+##[id*="cookie"]
+##[class*="cookie"]
+##[id*="gdpr"]
+##[class*="gdpr"]
+
+! ==== Paksa auto-hilang via CSS ====
+##.cookie-consent, .cookie-banner, .consent-popup { display: none !important; visibility: hidden !important; }
