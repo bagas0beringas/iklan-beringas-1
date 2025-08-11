@@ -1,0 +1,15 @@
+! Combined Adblock Safe Filter
+! Sumber:
+! EasyList
+! EasyPrivacy
+! AdGuard Mobile Ads
+! AdGuard Social Media
+! AdGuard Indonesian
+! AdGuard Tracking Protection
+
+!#include https://easylist.to/easylist/easylist.txt
+!#include https://easylist.to/easylist/easyprivacy.txt
+!#include https://filters.adtidy.org/extension/chromium/filters/11.txt
+!#include https://filters.adtidy.org/extension/chromium/filters/4.txt
+!#include https://filters.adtidy.org/extension/chromium/filters/224.txt
+!#include https://filters.adtidy.org/extension/chromium/filters/3.txt
