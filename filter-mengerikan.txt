@@ -1,0 +1,63 @@
+! ======= Super Killer Ad Filter =======
+! Buatan khusus untuk pemblokiran super agresif
+! Termasuk anti-tracking, anti-popup, anti-redirect
+
+! ==== BLOKIR IKLAN GOOGLE ====
+||googleads.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||securepubads.g.doubleclick.net^
+||partner.googleadservices.com^
+
+! ==== BLOKIR IKLAN FACEBOOK / META ====
+||connect.facebook.net^
+||static.xx.fbcdn.net/rsrc.php^
+||graph.facebook.com^
+||ads.facebook.com^
+||ads-api.tiktokglobalshop.com^
+
+! ==== BLOKIR YOUTUBE IN-VIDEO ADS ====
+||youtube.com/get_midroll_
+||youtube.com/api/stats/ads^
+||youtube.com/pagead/^
+||youtube.com/ptracking^
+||yt3.ggpht.com/*=s88-c-k-c0x00ffffff-no-rj-mo^$image
+
+! ==== BLOKIR IKLAN POPUP DAN REDIRECT ====
+||adserver.*
+||popads.net^
+||propellerads.com^
+||onclickads.net^
+||newpoptab.com^
+||newtab.club^
+||trafficjunky.net^
+
+! ==== BLOKIR TRACKER ====
+||doubleclick.net^
+||scorecardresearch.com^
+||quantserve.com^
+||zedo.com^
+||adnxs.com^
+||tapjoyads.com^
+||applovin.com^
+||inmobi.com^
+||chartboost.com^
+
+! ==== BLOKIR IKLAN DI GAME MOBILE ====
+||unityads.unity3d.com^
+||ads.mopub.com^
+||ads.flurry.com^
+||sdk-config.vungle.com^
+||api.vungle.com^
+||ironbeesdk.com^
+||supersonicads.com^
+||supersonic.com^
+
+! ==== BLOKIR IKLAN DI SITUS STREAMING ====
+||vidoomy.com^
+||outbrain.com^
+||taboola.com^
+||brightcove.com^
+||thevideo.me^
+||streamtape.com^$popup
+||vidcloud9.com^$popup
+||gounlimited.to^$popup
