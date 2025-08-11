@@ -1,92 +1,115 @@
-! =========================================
-! SUPER KILLER AD FILTER
-! Gabungan filter internasional + lokal + custom
-! Mode: Agresif (berisiko blokir fitur situs/app)
-! =========================================
 
-! ==== BLOKIR GOOGLE ADS ====
-||googleads.g.doubleclick.net^
-||pagead2.googlesyndication.com^
-||securepubads.g.doubleclick.net^
-||partner.googleadservices.com^
-
-! ==== BLOKIR FACEBOOK/META ADS ====
-||connect.facebook.net^
-||static.xx.fbcdn.net/rsrc.php^
-||graph.facebook.com^
-||ads.facebook.com^
-||ads-api.tiktokglobalshop.com^
-
-! ==== BLOKIR YOUTUBE IN-VIDEO ADS ====
-||youtube.com/get_midroll_
-||youtube.com/api/stats/ads^
-||youtube.com/pagead/^
-||youtube.com/ptracking^
-||yt3.ggpht.com/*=s88-c-k-c0x00ffffff-no-rj-mo^$image
-
-! ==== BLOKIR POPUP & REDIRECT ====
-||adserver.*
-||popads.net^
-||propellerads.com^
-||onclickads.net^
-||newpoptab.com^
-||newtab.club^
-||trafficjunky.net^
-
-! ==== BLOKIR TRACKER UMUM ====
+! === BLOCK DOMAIN IKLAN / TRACKER POPULER ===
 ||doubleclick.net^
-||scorecardresearch.com^
-||quantserve.com^
-||zedo.com^
+||googlesyndication.com^
+||googleadservices.com^
+||googletagmanager.com^
+||googletagservices.com^
 ||adnxs.com^
-||tapjoyads.com^
-||applovin.com^
-||inmobi.com^
-||chartboost.com^
-
-! ==== BLOKIR IKLAN GAME MOBILE ====
-||unityads.unity3d.com^
-||ads.mopub.com^
-||ads.flurry.com^
-||sdk-config.vungle.com^
-||api.vungle.com^
-||ironbeesdk.com^
-||supersonicads.com^
-||supersonic.com^
-
-! ==== BLOKIR IKLAN STREAMING ====
-||vidoomy.com^
-||outbrain.com^
+||adsafeprotected.com^
+||moatads.com^
+||pubmatic.com^
+||openx.net^
+||rubiconproject.com^
+||serving-sys.com^
+||smartadserver.com^
 ||taboola.com^
-||brightcove.com^
-||thevideo.me^
-||streamtape.com^$popup
-||vidcloud9.com^$popup
-||gounlimited.to^$popup
+||outbrain.com^
+||criteo.com^
+||adroll.com^
+||yieldmo.com^
+||scorecardresearch.com^
+||zedo.com^
+||revcontent.com^
+||spotxchange.com^
+||inmobi.com^
+||unityads.unity3d.com^
+||tapjoy.com^
+||vungle.com^
+||adcolony.com^
+||ironsrc.com^
+||adjust.com^
+||appsflyer.com^
+||branch.io^
+||flurry.com^
+||quantserve.com^
+||mathtag.com^
+||media.net^
+||propellerads.com^
+||popads.net^
 
-! ==== BLOKIR MALWARE & PHISHING ====
-||malwarebytes.com^
-||phishingfilter.org^
-||urlhaus.abuse.ch^
-||malwaredomainlist.com^
+! === BLOCK SCRIPT / RESOURCE IKLAN (TERTARGET) ===
+*ads.js$script
+*ads.min.js$script
+*advert.js$script
+*banner.js$script
+*popup.js$script
+*tracking.js$script
+*sponsor.js$script
+*.mraid.js$script
+*.analytics.js$script
+*$script,third-party
 
-! ==== BLOKIR IKLAN SOSIAL MEDIA ====
-||instagram.com/graphql/query/?q=ig_ad_*$xmlhttprequest
-||tiktokv.com/aweme/v1/ads/*
-||tiktokcdn.com/ads/*
-||twitter.com/i/api/1.1/ads/*
+! === BLOCK PATH UMUM IKLAN / TRACKING ===
+*/ads/*
+*/ad/*
+*/advert/*
+*/banner/*
+*/sponsor/*
+*/clicktrack/*
+*/tracking/*
+*/promo/*
 
-! ==== ANTI-WIDGET & ANNOYANCE ====
-##.sponsored
-##.ad-container
+! === HIDE ELEMENTS: POPUP, OVERLAY, BANNER ===
+##.modal-ad
+##.overlay-ad
+##.banner-ad
 ##.advertisement
-##.sponsor
-##[class*="ads"]
-##[id*="ads"]
+##.ad-slot
+##.ad-unit
+##[id^="google_ads"]
+##[class*="ad-"]
+##[class*="ads-"]
+##[id*="sponsor"]
 ##[class*="sponsor"]
-##[class*="promotion"]
 
-! ==== ANTI-PUSH NOTIFICATION SPONSOR ====
-||onesignal.com^$third-party
-||pushwoosh.com^
-||pusher.com^
+! === BLOCK VIDEO ADS YT — TANPA RUSAK PLAYER ===
+||youtube.com/api/stats/ads^
+||youtube.com/pagead^
+||youtubei.googleapis.com/youtubei/v1/player/ad_break^
+youtube.com##.ytd-promoted-video-renderer
+youtube.com##.ytd-display-ad-renderer
+
+! === TRACKING & ANALYTICS (MODERAT) ===
+||analytics.google.com^
+||stats.wp.com^
+||hotjar.com^
+||fullstory.com^
+||segment.com^
+||newrelic.com^
+||datadoghq.com^
+
+! === MOBILE / SDK TRACKERS UMUM ===
+||unityads.unity3d.com^
+||tapjoy.com^
+||vungle.com^
+||adcolony.com^
+||ironsrc.com^
+||inmobi.com^
+||adjust.com^
+||appsflyer.com^
+
+! === SOCIAL / WIDGET TRACKERS — DIBATASI ===
+||connect.facebook.net^
+||platform.twitter.com^
+||pixel.pinterest.com^
+
+! === BLOKIR DENGAN REGEX (ADVANCED) ===
+/^https?:\/\/([a-z0-9-]+\.)?(ads?|track|analytic|banner)[0-9]*\.[a-z]+/i
+/^https?:\/\/.*(doubleclick|googlesyndication|adservice|facebook|tracking|banner)\./i
+
+! === EXCEPTIONS (BIAR SITUS PENTING TIDAK RUSAK) ===
+@@||youtube.com^$important
+@@||google.com^
+@@||gstatic.com^
+@@||github.com^
